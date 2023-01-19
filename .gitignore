@@ -1,3 +1,9 @@
+# Binary files
+*.aot
+*.dill
+*.exe
+*.jit
+*.kernel
 
 # Miscellaneous
 *.class
