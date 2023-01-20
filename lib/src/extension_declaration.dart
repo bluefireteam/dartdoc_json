@@ -5,16 +5,21 @@ import 'package:dartdoc_json/src/member_list.dart';
 import 'package:dartdoc_json/src/type_parameter_list.dart';
 import 'package:dartdoc_json/src/utils.dart';
 
-/// Serializes a MixinDeclaration into a json-compatible object.
-Map<String, dynamic> serializeExtensionDeclaration(
+/// Serializes an ExtensionDeclaration into a json-compatible object.
+Map<String, dynamic>? serializeExtensionDeclaration(
   ExtensionDeclaration extension,
 ) {
+  final annotations = serializeAnnotations(extension.metadata);
+  if ((extension.name?.lexeme.startsWith('_') ?? false) ||
+      hasPrivateAnnotation(annotations)) {
+    return null;
+  }
   return filterMap(<String, dynamic>{
     'kind': 'extension',
     'name': extension.name?.lexeme,
     'typeParameters': serializeTypeParameterList(extension.typeParameters),
     'on': extension.extendedType.toString(),
-    'annotations': serializeAnnotations(extension.metadata),
+    'annotations': annotations,
     'description': serializeComment(extension.documentationComment),
     'members': serializeMemberList(extension.members),
   });
