@@ -1,0 +1,20 @@
+name: dartdoc_json
+description: Package for rendering dartdocs as JSON files.
+version: 0.1.0
+homepage: https://github.com/bluefireteam/dartdoc_json
+funding:
+  - https://patreon.com/bluefireoss
+  - https://www.buymeacoffee.com/bluefire
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  analyzer: ^5.4.0
+  args: ^2.3.1
+  meta: ^1.7.0
+  path: ^1.8.3
+
+dev_dependencies:
+  flame_lint: ^0.1.3
+  test: any
