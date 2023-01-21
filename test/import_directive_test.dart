@@ -7,7 +7,7 @@ void main() {
     test('simple import', () {
       expect(
         parseAsJson('import "foo.dart";'),
-        {'name': 'import', 'uri': 'foo.dart'},
+        {'kind': 'import', 'uri': 'foo.dart'},
       );
     });
 
@@ -20,15 +20,15 @@ void main() {
           import 'package:test/test.dart' show group, test hide expect;
         '''),
         [
-          {'name': 'import', 'uri': 'dart:async'},
-          {'name': 'import', 'uri': 'package:meta/meta.dart'},
+          {'kind': 'import', 'uri': 'dart:async'},
+          {'kind': 'import', 'uri': 'package:meta/meta.dart'},
           {
-            'name': 'import',
+            'kind': 'import',
             'uri': 'package:analyzer/dart/ast/ast.dart',
             'as': 'ast',
           },
           {
-            'name': 'import',
+            'kind': 'import',
             'uri': 'package:test/test.dart',
             'show': ['group', 'test'],
             'hide': ['expect'],
