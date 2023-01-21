@@ -1,0 +1,26 @@
+name: cicd
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cedx/setup-dart@v3
+      - run: dart pub get
+      - run: dart format . --set-exit-if-changed
+      - run: dart analyze --fatal-warnings --fatal-infos
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cedx/setup-dart@v3
+      - run: dart pub get
+      - run: dart test
