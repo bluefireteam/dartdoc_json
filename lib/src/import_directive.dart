@@ -7,7 +7,7 @@ Map<String, dynamic> serializeImportDirective(ImportDirective import_) {
   final hides = serializeCombinators<HideCombinator>(import_.combinators);
 
   return filterMap(<String, dynamic>{
-    'name': 'import',
+    'kind': 'import',
     'uri': import_.uri.stringValue,
     'as': import_.prefix?.token.lexeme,
     'show': shows.isEmpty ? null : shows,
