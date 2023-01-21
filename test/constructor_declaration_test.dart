@@ -17,6 +17,18 @@ void main() {
       );
     });
 
+    test('private constructors', () {
+      expect(
+        parseConstructors('''
+          class X {
+            X._private();
+            @internal X();
+          }
+        '''),
+        isEmpty,
+      );
+    });
+
     test('named constructors', () {
       expect(
         parseConstructors('''
