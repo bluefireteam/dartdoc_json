@@ -4,7 +4,7 @@ import 'utils.dart';
 void main() {
   group('ClassDeclaration', () {
     test('bare class', () {
-        expect(
+      expect(
         parseAsJson('class X {}'),
         {'kind': 'class', 'name': 'X'},
       );
