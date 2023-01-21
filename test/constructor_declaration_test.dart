@@ -98,7 +98,7 @@ void main() {
         parseConstructors('''
           class X {
             @Deprecated('really')
-            @internal
+            @external
             X();
           }
         '''),
@@ -111,7 +111,7 @@ void main() {
                 'name': '@Deprecated',
                 'arguments': ["'really'"]
               },
-              {'name': '@internal'},
+              {'name': '@external'},
             ],
           },
         ],

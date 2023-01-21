@@ -7,7 +7,7 @@ void main() {
     test('simple export', () {
       expect(
         parseAsJson('export "foo.dart";'),
-        {'name': 'export', 'uri': 'foo.dart'},
+        {'kind': 'export', 'uri': 'foo.dart'},
       );
     });
 
@@ -21,10 +21,10 @@ void main() {
             hide Example;
         '''),
         [
-          {'name': 'export', 'uri': 'src/utils.dart'},
-          {'name': 'export', 'uri': 'src/directives/export_directive.dart'},
+          {'kind': 'export', 'uri': 'src/utils.dart'},
+          {'kind': 'export', 'uri': 'src/directives/export_directive.dart'},
           {
-            'name': 'export',
+            'kind': 'export',
             'uri': 'main.dart',
             'show': ['main', 'auxiliary'],
             'hide': ['Example'],
