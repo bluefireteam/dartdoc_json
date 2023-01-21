@@ -1,4 +1,3 @@
-
 # Dart API extractor
 
 This is a command line tool that can parse your Dart files to extract API information, and then
