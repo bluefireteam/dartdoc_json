@@ -8,7 +8,9 @@ import 'package:dartdoc_json/src/utils.dart';
 Map<String, dynamic>? serializeConstructorDeclaration(
   ConstructorDeclaration constructor,
 ) {
-  if (constructor.name?.lexeme.startsWith('_') ?? false) {
+  final annotations = serializeAnnotations(constructor.metadata);
+  if ((constructor.name?.lexeme.startsWith('_') ?? false) ||
+      hasPrivateAnnotation(annotations)) {
     return null;
   }
   final className = (constructor.parent! as ClassDeclaration).name.lexeme;
@@ -23,6 +25,6 @@ Map<String, dynamic>? serializeConstructorDeclaration(
     'factory': constructor.factoryKeyword == null ? null : true,
     'description': serializeComment(constructor.documentationComment),
     'parameters': serializeFormalParameterList(constructor.parameters),
-    'annotations': serializeAnnotations(constructor.metadata),
+    'annotations': annotations,
   });
 }
