@@ -21,4 +21,3 @@ dev_dependencies:
 
 executables:
   dartdoc_json: main
-  dartdoc-json: main

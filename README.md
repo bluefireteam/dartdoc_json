@@ -11,7 +11,7 @@ dart pub global activate dartdoc_json
 
 Usage:
 ```shell
-dartdoc-json FILENAME(s)
+dartdoc_json FILENAME(s)
 ```
 
 
