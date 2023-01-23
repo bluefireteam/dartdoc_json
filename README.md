@@ -4,9 +4,14 @@ This is a command line tool that can parse your Dart files to extract API inform
 save that information into a file in JSON format. This output can then be consumed by downstream
 tools for a variety of purposes, for example to generate documentation.
 
+Install:
+```shell
+dart pub global activate dartdoc_json
+```
+
 Usage:
 ```shell
-dart run dartdoc_json.dart FILENAME(s)
+dartdoc-json FILENAME(s)
 ```
 
 
