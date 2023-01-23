@@ -20,4 +20,5 @@ dev_dependencies:
   test: any
 
 executables:
-  dartdoc_json: dartdoc_json
+  dartdoc_json: main
+  dartdoc-json: main
