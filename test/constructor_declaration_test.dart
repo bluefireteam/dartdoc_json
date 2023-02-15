@@ -168,7 +168,7 @@ void main() {
       expect(
         parseConstructors('''
           class X {
-            X(int a, {required int x, double? y});
+            X(int a, {required int x, double? y, bool z = false});
           }
         '''),
         [
@@ -178,10 +178,11 @@ void main() {
             'parameters': {
               'all': [
                 {'name': 'a', 'type': 'int'},
-                {'name': 'x', 'type': 'int'},
+                {'name': 'x', 'type': 'int', 'required': true},
                 {'name': 'y', 'type': 'double?'},
+                {'name': 'z', 'type': 'bool', 'default': 'false'},
               ],
-              'named': 2,
+              'named': 3,
             },
           },
         ],

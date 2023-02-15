@@ -23,5 +23,6 @@ Map<String, dynamic> serializeFormalParameter(FormalParameter _parameter) {
     'type': type,
     'covariant': p.covariantKeyword == null ? null : true,
     'default': defaultValue,
+    'required': p.isRequiredNamed ? true : null,
   });
 }

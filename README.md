@@ -174,6 +174,9 @@ parameter = {
 
   // If true, indicates the presence of the `covariant` keyword.
   "covariant": bool,
+
+  // If true, indicates the presence of the `required` keyword.
+  "required": bool,
 }
 
 enumConstant = {
