@@ -13,7 +13,19 @@ Map<String, dynamic>? serializeConstructorDeclaration(
       hasPrivateAnnotation(annotations)) {
     return null;
   }
-  final className = (constructor.parent! as ClassDeclaration).name.lexeme;
+  final String className;
+
+  if (constructor.parent is ClassDeclaration) {
+    className = (constructor.parent! as ClassDeclaration).name.lexeme;
+  } else if (constructor.parent is EnumDeclaration) {
+    className = (constructor.parent! as EnumDeclaration).name.lexeme;
+  } else {
+    throw UnsupportedError(
+      'Constructor parent is neither ClassDeclaration nor EnumDeclaration. '
+      'It is ${constructor.parent.runtimeType}',
+    );
+  }
+
   final constructorName = constructor.name == null
       ? className
       : '$className.${constructor.name!.lexeme}';

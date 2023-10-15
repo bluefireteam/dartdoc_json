@@ -96,4 +96,26 @@ void main() {
       );
     });
   });
+
+  test('enum with constructor', () {
+    expect(
+      parseAsJson('''
+          enum Abc {
+            a;
+            
+           const Abc();
+          }
+        '''),
+      {
+        'kind': 'enum',
+        'name': 'Abc',
+        'values': [
+          {'name': 'a'},
+        ],
+        'members': [
+          {'kind': 'constructor', 'name': 'Abc', 'const': true},
+        ],
+      },
+    );
+  });
 }
