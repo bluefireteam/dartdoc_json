@@ -61,7 +61,7 @@ void main() {
           'kind': 'typedef',
           'name': 'A',
           'typeParameters': [
-            {'name': 'T', 'extends': 'Game'}
+            {'name': 'T', 'extends': 'Game'},
           ],
         },
       );

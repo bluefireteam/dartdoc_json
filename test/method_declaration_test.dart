@@ -47,8 +47,8 @@ void main() {
             'name': 'flame',
             'returns': 'int',
             'typeParameters': [
-              {'name': 'T'}
-            ]
+              {'name': 'T'},
+            ],
           },
         ],
       );
@@ -70,8 +70,8 @@ void main() {
               'all': [
                 {'name': 'a', 'type': 'bool'},
                 {'name': 'b', 'type': 'int'},
-              ]
-            }
+              ],
+            },
           },
         ],
       );
@@ -138,7 +138,7 @@ void main() {
             'name': 'xyz',
             'parameters': {
               'all': [
-                {'name': 'value', 'type': 'int'}
+                {'name': 'value', 'type': 'int'},
               ],
             },
           },
@@ -177,8 +177,8 @@ void main() {
             'name': 'operator==',
             'parameters': {
               'all': [
-                {'name': 'other', 'type': 'Object'}
-              ]
+                {'name': 'other', 'type': 'Object'},
+              ],
             },
             'returns': 'bool',
           },

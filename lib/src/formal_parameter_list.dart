@@ -13,7 +13,7 @@ Map<String, dynamic>? serializeFormalParameterList(
   final nNamedParameters = list.parameters.where((p) => p.isNamed).length;
   final out = <String, dynamic>{};
   out['all'] = [
-    for (final param in list.parameters) serializeFormalParameter(param)
+    for (final param in list.parameters) serializeFormalParameter(param),
   ];
   if (nPositionalParameters != 0) {
     out['positional'] = nPositionalParameters;
