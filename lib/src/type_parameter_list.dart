@@ -7,6 +7,6 @@ List<dynamic>? serializeTypeParameterList(ast.TypeParameterList? types) {
     return null;
   }
   return <dynamic>[
-    for (final type in types.typeParameters) serializeTypeParameter(type)
+    for (final type in types.typeParameters) serializeTypeParameter(type),
   ];
 }

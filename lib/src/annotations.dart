@@ -14,7 +14,7 @@ List<Map<String, dynamic>>? serializeAnnotations(
     if (annotation.arguments != null) {
       record['arguments'] = [
         for (final argument in annotation.arguments!.arguments)
-          argument.toString()
+          argument.toString(),
       ];
     }
     out.add(record);

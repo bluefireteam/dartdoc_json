@@ -6,7 +6,7 @@ List<String> serializeCombinators<C extends Combinator>(
   return [
     for (final combinator in combinators)
       if (combinator is C)
-        for (var name in _names(combinator)) name.token.lexeme
+        for (final name in _names(combinator)) name.token.lexeme,
   ];
 }
 

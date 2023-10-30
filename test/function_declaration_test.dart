@@ -17,7 +17,7 @@ void main() {
             'all': [
               {'name': 'a', 'type': 'int'},
               {'name': 'b', 'type': 'int'},
-            ]
+            ],
           },
         },
       );
@@ -47,7 +47,7 @@ void main() {
           'name': 'moo',
           'returns': 'void',
           'typeParameters': [
-            {'name': 'T'}
+            {'name': 'T'},
           ],
           'parameters': {
             'all': [

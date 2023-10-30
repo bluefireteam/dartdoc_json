@@ -7,12 +7,12 @@ import 'package:dartdoc_json/src/method_declaration.dart';
 ///
 /// An error will be thrown if this function encounters a member of unknown
 /// type.
-List<dynamic>? serializeMemberList(ast.NodeList<ast.ClassMember> _members) {
-  if (_members.isEmpty) {
+List<dynamic>? serializeMemberList(ast.NodeList<ast.ClassMember> members) {
+  if (members.isEmpty) {
     return null;
   }
   final out = <dynamic>[];
-  for (final member in _members) {
+  for (final member in members) {
     Map<String, dynamic>? json;
     if (member is ast.ConstructorDeclaration) {
       json = serializeConstructorDeclaration(member);

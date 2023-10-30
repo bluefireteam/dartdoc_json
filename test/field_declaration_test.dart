@@ -61,7 +61,7 @@ void main() {
             'kind': 'field',
             'name': 'a',
             'extraNames': ['b', 'c'],
-            'type': 'int'
+            'type': 'int',
           }
         ],
       );

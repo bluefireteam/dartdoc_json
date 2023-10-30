@@ -63,11 +63,11 @@ void main() {
           'values': [
             {
               'name': 'a',
-              'arguments': ["'one'"]
+              'arguments': ["'one'"],
             },
             {
               'name': 'b',
-              'arguments': ["'two'", '2']
+              'arguments': ["'two'", '2'],
             },
           ],
         },
