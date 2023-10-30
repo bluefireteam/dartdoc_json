@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- Fix constructor clauses for enums
+- Upgrade dependencies
+
 ## 0.2.0
 
 - Upgrade `flame_lint` version
