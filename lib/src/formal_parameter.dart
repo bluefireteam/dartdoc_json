@@ -2,8 +2,8 @@ import 'package:analyzer/dart/ast/ast.dart';
 import 'package:dartdoc_json/src/utils.dart';
 
 /// Converts a FormalParameter into a json-compatible object.
-Map<String, dynamic> serializeFormalParameter(FormalParameter _parameter) {
-  var p = _parameter;
+Map<String, dynamic> serializeFormalParameter(FormalParameter parameter) {
+  var p = parameter;
   String? defaultValue;
   if (p is DefaultFormalParameter) {
     defaultValue = p.defaultValue?.toString();

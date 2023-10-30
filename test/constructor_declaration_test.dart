@@ -109,7 +109,7 @@ void main() {
             'annotations': [
               {
                 'name': '@Deprecated',
-                'arguments': ["'really'"]
+                'arguments': ["'really'"],
               },
               {'name': '@external'},
             ],
@@ -132,8 +132,8 @@ void main() {
             'parameters': {
               'all': [
                 {'name': 'x', 'type': 'int'},
-                {'name': 'y', 'type': 'double?'}
-              ]
+                {'name': 'y', 'type': 'double?'},
+              ],
             },
           },
         ],
@@ -204,7 +204,7 @@ void main() {
             'parameters': {
               'all': [
                 {'name': 'this.x'},
-              ]
+              ],
             },
           },
         ],

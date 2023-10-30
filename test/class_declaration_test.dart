@@ -39,8 +39,8 @@ void main() {
           'kind': 'class',
           'name': 'X',
           'typeParameters': [
-            {'name': 'T', 'extends': 'Base'}
-          ]
+            {'name': 'T', 'extends': 'Base'},
+          ],
         },
       );
     });
@@ -55,7 +55,7 @@ void main() {
             {'name': 'T', 'extends': 'A<B>'},
             {'name': 'S', 'extends': 'Base2'},
             {'name': 'R'},
-          ]
+          ],
         },
       );
     });

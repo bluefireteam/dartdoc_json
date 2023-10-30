@@ -25,7 +25,7 @@ Map<String, dynamic>? serializeEnumDeclaration(EnumDeclaration enum_) {
     'description': serializeComment(enum_.documentationComment),
     'values': [
       for (final value in enum_.constants)
-        serializeEnumConstantDeclaration(value)
+        serializeEnumConstantDeclaration(value),
     ]..removeWhere((dynamic item) => item == null),
     'members': serializeMemberList(enum_.members),
   });

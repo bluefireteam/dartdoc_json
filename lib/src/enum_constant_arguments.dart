@@ -8,6 +8,7 @@ List<String>? serializeEnumConstantArguments(
     return null;
   }
   return <String>[
-    for (final argument in arguments.argumentList.arguments) argument.toString()
+    for (final argument in arguments.argumentList.arguments)
+      argument.toString(),
   ];
 }

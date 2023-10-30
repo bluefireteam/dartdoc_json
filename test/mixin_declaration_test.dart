@@ -9,7 +9,7 @@ void main() {
         {
           'kind': 'mixin',
           'name': 'Moo',
-          'on': ['X', 'Y']
+          'on': ['X', 'Y'],
         },
       );
     });
@@ -22,7 +22,7 @@ void main() {
         {
           'kind': 'mixin',
           'name': 'Moo',
-          'implements': ['Sound']
+          'implements': ['Sound'],
         },
       );
     });
