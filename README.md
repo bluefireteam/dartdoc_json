@@ -35,7 +35,7 @@ compilationUnit = {
 
 directive = {
   // What kind of directive this is
-  "kind": "import" | "export",
+  "kind": "import" | "export" | "part" | "part-of" | "library",
 
   // The name of the file being imported or exported
   "uri": string,
@@ -46,6 +46,13 @@ directive = {
 
   // For "import" statements, the ID after the `as` keyword
   "as": string,
+
+  // For "library" statements, the name of the library
+  // For "part-of" statements, the name of the library that the file is a part of
+  "name": string,
+
+  // Whether the directive references an augmentation library
+  "augmentation": bool,
 }
 
 declaration = {
