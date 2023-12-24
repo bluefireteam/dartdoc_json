@@ -14,7 +14,11 @@ void main() {
     // test('augment library', () {
     //   expect(
     //     parseAsJson("library augment 'main_library.dart';"),
-    //     {'kind': 'library', 'augmentation': true, 'uri': 'main_library.dart'},
+    //     {
+    //       'kind': 'library',
+    //       'augmentation': true,
+    //       'uri': 'main_library.dart',
+    //     },
     //   );
     // });
   });
