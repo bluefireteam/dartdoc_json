@@ -6,6 +6,7 @@ import 'package:dartdoc_json/src/extension_declaration.dart';
 import 'package:dartdoc_json/src/function_declaration.dart';
 import 'package:dartdoc_json/src/generic_type_alias.dart';
 import 'package:dartdoc_json/src/import_directive.dart';
+import 'package:dartdoc_json/src/library_directive.dart';
 import 'package:dartdoc_json/src/mixin_declaration.dart';
 import 'package:dartdoc_json/src/part_directive.dart';
 import 'package:dartdoc_json/src/top_level_variable_declaration.dart';
@@ -44,7 +45,8 @@ Map<String, dynamic> serializeCompilationUnit(CompilationUnit unit) {
       serialized = serializeImportDirective(directive);
     } else if (directive is ExportDirective) {
       serialized = serializeExportDirective(directive);
-      // } else if (directive is LibraryDirective) {
+    } else if (directive is LibraryDirective) {
+      serialized = serializeLibraryDirective(directive);
     } else if (directive is PartDirective) {
       serialized = serializePartDirective(directive);
     } else if (directive is PartOfDirective) {
