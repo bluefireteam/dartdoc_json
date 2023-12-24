@@ -12,6 +12,6 @@ Map<String, dynamic> serializePartOfDirective(PartOfDirective partOf) {
   return filterMap(<String, dynamic>{
     'kind': 'part-of',
     'uri': partOf.uri?.stringValue,
-    'libraryName': partOf.libraryName?.name,
+    'name': partOf.libraryName?.name,
   });
 }
