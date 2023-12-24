@@ -43,6 +43,8 @@ Map<String, dynamic> serializeCompilationUnit(CompilationUnit unit) {
     late Map<String, dynamic> serialized;
     if (directive is ImportDirective) {
       serialized = serializeImportDirective(directive);
+    } else if (directive is AugmentationImportDirective) {
+      serialized = serializeAugmentationImportDirective(directive);
     } else if (directive is ExportDirective) {
       serialized = serializeExportDirective(directive);
     } else if (directive is LibraryDirective) {
