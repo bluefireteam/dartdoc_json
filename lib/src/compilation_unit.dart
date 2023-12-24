@@ -47,6 +47,8 @@ Map<String, dynamic> serializeCompilationUnit(CompilationUnit unit) {
       serialized = serializeExportDirective(directive);
     } else if (directive is LibraryDirective) {
       serialized = serializeLibraryDirective(directive);
+    } else if (directive is LibraryAugmentationDirective) {
+      serialized = serializeLibraryAugmentationDirective(directive);
     } else if (directive is PartDirective) {
       serialized = serializePartDirective(directive);
     } else if (directive is PartOfDirective) {
