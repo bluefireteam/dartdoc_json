@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0
+
+- Add support for part, part of and library directives
+- Add support for the augment keyword
+
 ## 0.3.0
 
 - Fix constructor clauses for enums
