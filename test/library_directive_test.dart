@@ -9,6 +9,6 @@ void main() {
         parseAsJson('library foo;'),
         {'kind': 'library', 'name': 'foo'},
       );
-    });    
+    });
   });
 }
