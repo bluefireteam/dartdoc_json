@@ -1,6 +1,6 @@
 name: dartdoc_json
 description: Package for rendering dartdocs as JSON files.
-version: 0.4.0
+version: 0.5.0
 repository: https://github.com/bluefireteam/dartdoc_json
 funding:
   - https://patreon.com/bluefireoss
