@@ -1,7 +1,7 @@
 import 'package:analyzer/dart/ast/ast.dart' as ast;
 
 /// Converts an OnClause into a json-compatible object.
-List<String>? serializeOnClause(ast.OnClause? clause) {
+List<String>? serializeOnClause(ast.MixinOnClause? clause) {
   if (clause == null) {
     return null;
   }

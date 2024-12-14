@@ -5,7 +5,7 @@ import 'package:analyzer/dart/ast/ast.dart';
 /// The line structure will be preserved, but the comment markers "///" will
 /// be stripped.
 String? serializeComment(Comment? comment) {
-  if (comment == null || !comment.isDocumentation) {
+  if (comment == null) {
     return null;
   }
   final lines = <String>[];

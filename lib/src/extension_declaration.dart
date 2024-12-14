@@ -18,7 +18,7 @@ Map<String, dynamic>? serializeExtensionDeclaration(
     'kind': 'extension',
     'name': extension.name?.lexeme,
     'typeParameters': serializeTypeParameterList(extension.typeParameters),
-    'on': extension.extendedType.toString(),
+    'on': extension.onClause.toString(),
     'annotations': annotations,
     'description': serializeComment(extension.documentationComment),
     'members': serializeMemberList(extension.members),

@@ -9,7 +9,7 @@ void main() {
         parseAsJson('''
           extension XX on X {}
         '''),
-        {'kind': 'extension', 'name': 'XX', 'on': 'X'},
+        {'kind': 'extension', 'name': 'XX', 'on': 'on X'},
       );
     });
 
@@ -22,7 +22,7 @@ void main() {
         {
           'kind': 'extension',
           'name': 'XX',
-          'on': 'X',
+          'on': 'on X',
           'description': 'Adds shiny new functionality to X\n',
         },
       );
@@ -39,7 +39,7 @@ void main() {
         {
           'kind': 'extension',
           'name': 'XX',
-          'on': 'X',
+          'on': 'on X',
           'members': [
             {'kind': 'method', 'name': 'foo', 'returns': 'int'},
             {'kind': 'method', 'name': 'bar', 'returns': 'int'},

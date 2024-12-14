@@ -14,13 +14,3 @@ Map<String, dynamic> serializeImportDirective(ImportDirective import_) {
     'hide': hides.isEmpty ? null : hides,
   });
 }
-
-Map<String, dynamic> serializeAugmentationImportDirective(
-  AugmentationImportDirective import_,
-) {
-  return filterMap(<String, dynamic>{
-    'kind': 'import',
-    'uri': import_.uri.stringValue,
-    'augmentation': true,
-  });
-}
