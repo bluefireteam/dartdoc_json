@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- Remove Analyzer deprecations
+
 ## 0.4.0
 
 - Add support for part, part of and library directives
