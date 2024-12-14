@@ -7,13 +7,3 @@ Map<String, dynamic> serializeLibraryDirective(LibraryDirective library) {
     'name': library.name2?.name,
   });
 }
-
-Map<String, dynamic> serializeLibraryAugmentationDirective(
-  LibraryAugmentationDirective libraryAgumentation,
-) {
-  return filterMap(<String, dynamic>{
-    'kind': 'library',
-    'augmentation': true,
-    'uri': libraryAgumentation.uri,
-  });
-}
