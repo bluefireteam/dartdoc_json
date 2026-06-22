@@ -19,10 +19,14 @@ Map<String, dynamic>? serializeConstructorDeclaration(
     className = (constructor.parent! as ClassDeclaration).name.lexeme;
   } else if (constructor.parent is EnumDeclaration) {
     className = (constructor.parent! as EnumDeclaration).name.lexeme;
+    // ignore: experimental_member_use
+  } else if (constructor.parent is ExtensionTypeDeclaration) {
+    // ignore: experimental_member_use
+    className = (constructor.parent! as ExtensionTypeDeclaration).name.lexeme;
   } else {
     throw UnsupportedError(
-      'Constructor parent is neither ClassDeclaration nor EnumDeclaration. '
-      'It is ${constructor.parent.runtimeType}',
+      'Constructor parent is not a ClassDeclaration, EnumDeclaration or '
+      'ExtensionTypeDeclaration. It is ${constructor.parent.runtimeType}',
     );
   }
 

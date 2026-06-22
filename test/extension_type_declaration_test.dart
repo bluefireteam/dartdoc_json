@@ -64,6 +64,24 @@ void main() {
       );
     });
 
+    test('extension type with a named constructor', () {
+      expect(
+        parseAsJson('''
+          extension type Meters(int value) {
+            Meters.zero() : value = 0;
+          }
+        '''),
+        {
+          'kind': 'extension-type',
+          'name': 'Meters',
+          'representation': {'name': 'value', 'type': 'int'},
+          'members': [
+            {'kind': 'constructor', 'name': 'Meters.zero'},
+          ],
+        },
+      );
+    });
+
     test('extension type with members and comment', () {
       expect(
         parseAsJson('''
