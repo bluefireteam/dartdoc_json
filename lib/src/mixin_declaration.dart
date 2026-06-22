@@ -17,6 +17,7 @@ Map<String, dynamic>? serializeMixinDeclaration(MixinDeclaration mixin) {
     'kind': 'mixin',
     'name': mixin.name.lexeme,
     'typeParameters': serializeTypeParameterList(mixin.typeParameters),
+    'base': mixin.baseKeyword == null ? null : true,
     'implements': serializeImplementsClause(mixin.implementsClause),
     'on': serializeOnClause(mixin.onClause),
     'annotations': annotations,

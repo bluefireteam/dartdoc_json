@@ -59,9 +59,9 @@ declaration = {
   // What kind of declaration this is. Note that some declarations may only
   // appear at the top level of the file, while others are nested within
   // top-level declarations.
-  "kind": "class" | "mixin" | "extension" | "variable" | "typedef" | "enum" |
-          "function" | "constructor" | "field" | "getter" | "setter" |
-          "method",
+  "kind": "class" | "mixin" | "extension" | "extension-type" | "variable" |
+          "typedef" | "enum" | "function" | "constructor" | "field" |
+          "getter" | "setter" | "method",
 
   // The name of the declared symbol. For constructors this will be either
   // the name of the enclosing class, or the dotted name such as
@@ -79,9 +79,13 @@ declaration = {
   // declared object.
   "annotations": array[annotation],
 
-  // For "class"/"mixin"/"extension" declarations, this is the list of
-  // entities defined within: constructors, methods, fields, etc.
+  // For "class"/"mixin"/"extension"/"extension-type" declarations, this is
+  // the list of entities defined within: constructors, methods, fields, etc.
   "members": array[declaration],
+
+  // For an "extension-type" declaration, the representation object that
+  // describes the underlying representation type, such as `(int value)`.
+  "representation": representation,
 
   // The name of the entity that this class extends. This name may contain
   // template parameters.
@@ -110,6 +114,18 @@ declaration = {
   // Whether the class was declared as `abstract`.
   "abstract": bool,
 
+  // Whether the class/mixin was declared with the `base` modifier.
+  "base": bool,
+
+  // Whether the class was declared with the `interface` modifier.
+  "interface": bool,
+
+  // Whether the class was declared with the `sealed` modifier.
+  "sealed": bool,
+
+  // Whether the class was declared as a `mixin class`.
+  "mixinClass": bool,
+
   // Whether the constructor/field/variable were declared as `const`.
   "const": bool,
 
@@ -119,7 +135,7 @@ declaration = {
   // Whether the method was declared as `static`.
   "static": bool,
 
-  // Whether the variable/field were declared as `final`.
+  // Whether the variable/field/class were declared as `final`.
   "final": bool,
 
   // Whether the variable/field were declared as `late`.
@@ -137,6 +153,19 @@ typeParameter = {
 
   // The name of the type after the `extends` keyword.
   "extends": string,
+}
+
+representation = {
+  // The name of the representation field, such as "value" in
+  // `extension type Meters(int value)`.
+  "name": string,
+
+  // The representation type, such as "int".
+  "type": string,
+
+  // The name of the primary constructor, if a named one was given, such as
+  // "raw" in `extension type Id.raw(String value)`.
+  "constructorName": string,
 }
 
 annotation = {
