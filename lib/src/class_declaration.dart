@@ -1,5 +1,6 @@
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:dartdoc_json/src/annotations.dart';
+import 'package:dartdoc_json/src/class_modifiers.dart';
 import 'package:dartdoc_json/src/comment.dart';
 import 'package:dartdoc_json/src/extends_clause.dart';
 import 'package:dartdoc_json/src/implements_clause.dart';
@@ -19,7 +20,14 @@ Map<String, dynamic>? serializeClassDeclaration(ClassDeclaration class_) {
     'kind': 'class',
     'name': class_.name.lexeme,
     'typeParameters': serializeTypeParameterList(class_.typeParameters),
-    'abstract': class_.abstractKeyword == null ? null : true,
+    ...serializeClassModifiers(
+      abstractKeyword: class_.abstractKeyword,
+      baseKeyword: class_.baseKeyword,
+      interfaceKeyword: class_.interfaceKeyword,
+      finalKeyword: class_.finalKeyword,
+      sealedKeyword: class_.sealedKeyword,
+      mixinKeyword: class_.mixinKeyword,
+    ),
     'extends': serializeExtendsClause(class_.extendsClause),
     'with': serializeWithClause(class_.withClause),
     'implements': serializeImplementsClause(class_.implementsClause),

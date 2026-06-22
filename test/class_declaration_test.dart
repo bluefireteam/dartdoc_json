@@ -168,5 +168,39 @@ void main() {
         },
       );
     });
+
+    test('class modifiers', () {
+      expect(parseAsJson('sealed class X {}'), {
+        'kind': 'class',
+        'name': 'X',
+        'sealed': true,
+      });
+      expect(parseAsJson('base class X {}'), {
+        'kind': 'class',
+        'name': 'X',
+        'base': true,
+      });
+      expect(parseAsJson('interface class X {}'), {
+        'kind': 'class',
+        'name': 'X',
+        'interface': true,
+      });
+      expect(parseAsJson('final class X {}'), {
+        'kind': 'class',
+        'name': 'X',
+        'final': true,
+      });
+      expect(parseAsJson('mixin class X {}'), {
+        'kind': 'class',
+        'name': 'X',
+        'mixinClass': true,
+      });
+      expect(parseAsJson('abstract base class X {}'), {
+        'kind': 'class',
+        'name': 'X',
+        'abstract': true,
+        'base': true,
+      });
+    });
   });
 }

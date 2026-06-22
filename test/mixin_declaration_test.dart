@@ -56,5 +56,12 @@ void main() {
         },
       );
     });
+
+    test('base mixin', () {
+      expect(
+        parseAsJson('base mixin Moo {}'),
+        {'kind': 'mixin', 'name': 'Moo', 'base': true},
+      );
+    });
   });
 }

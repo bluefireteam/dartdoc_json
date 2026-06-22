@@ -1,8 +1,10 @@
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:dartdoc_json/src/class_declaration.dart';
+import 'package:dartdoc_json/src/class_type_alias.dart';
 import 'package:dartdoc_json/src/enum_declaration.dart';
 import 'package:dartdoc_json/src/export_directive.dart';
 import 'package:dartdoc_json/src/extension_declaration.dart';
+import 'package:dartdoc_json/src/extension_type_declaration.dart';
 import 'package:dartdoc_json/src/function_declaration.dart';
 import 'package:dartdoc_json/src/generic_type_alias.dart';
 import 'package:dartdoc_json/src/import_directive.dart';
@@ -17,10 +19,15 @@ Map<String, dynamic> serializeCompilationUnit(CompilationUnit unit) {
     Map<String, dynamic>? serialized;
     if (declaration is ClassDeclaration) {
       serialized = serializeClassDeclaration(declaration);
+    } else if (declaration is ClassTypeAlias) {
+      serialized = serializeClassTypeAlias(declaration);
     } else if (declaration is MixinDeclaration) {
       serialized = serializeMixinDeclaration(declaration);
     } else if (declaration is ExtensionDeclaration) {
       serialized = serializeExtensionDeclaration(declaration);
+      // ignore: experimental_member_use
+    } else if (declaration is ExtensionTypeDeclaration) {
+      serialized = serializeExtensionTypeDeclaration(declaration);
     } else if (declaration is GenericTypeAlias) {
       serialized = serializeGenericTypeAlias(declaration);
     } else if (declaration is EnumDeclaration) {
