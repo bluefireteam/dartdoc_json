@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0
+
+- Add support for extension types
+- Add support for class type aliases (`class C = B with M;`)
+- Add support for the `base`, `interface`, `final`, `sealed` and `mixin class` modifiers
+
 ## 0.5.0
 
 - Remove Analyzer deprecations
